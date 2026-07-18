@@ -1,0 +1,14 @@
+# Media files never belong in this repo -- they live on Google Drive.
+*.mp4
+*.mov
+*.MOV
+*.mp3
+*.wav
+*.m4a
+*.avi
+*.mkv
+edit/
+overlays*/
+stock_candidates/
+sfx_downloaded/
+music_candidates/
