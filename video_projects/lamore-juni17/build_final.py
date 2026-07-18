@@ -22,18 +22,22 @@ from __future__ import annotations
 
 import json
 import subprocess
+import sys
 from pathlib import Path
 
-FFMPEG = r"C:\Users\User\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.2-full_build\bin\ffmpeg.exe"
-FFPROBE = r"C:\Users\User\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1.2-full_build\bin\ffprobe.exe"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+import lamore_config as cfg  # noqa: E402
+
+FFMPEG = cfg.FFMPEG
+FFPROBE = cfg.FFPROBE
 FONT = r"C\:/Windows/Fonts/arialbd.ttf"
 
-PROJECT = Path(r"E:\CLAUDE VIDEO EDIT\Hyperframe edit\video_projects\lamore-juni17")
-BROLL_DIR = Path(r"E:\CLAUDE VIDEO EDIT\videó anyagok")
-STOCK_DIR = BROLL_DIR / "stock_candidates"
-SFX_BUNDLED = Path(r"E:\CLAUDE VIDEO EDIT\Hyperframe edit\.agents\skills\media-use\audio\assets\sfx")
-SFX_DL = Path(r"E:\CLAUDE VIDEO EDIT\Hyperframe edit\video_projects\lamore-juni20\sfx_downloaded")
-MUSIC = Path(r"E:\CLAUDE VIDEO EDIT\Hyperframe edit\video_projects\lamore-juni20\music_candidates\close_up_michael_ramir_c.mp3")
+PROJECT = Path(__file__).resolve().parent
+BROLL_DIR = cfg.BROLL_DIR
+STOCK_DIR = cfg.STOCK_DIR
+SFX_BUNDLED = cfg.SFX_BUNDLED
+SFX_DL = cfg.SHARED_SFX_DL
+MUSIC = cfg.SHARED_MUSIC
 
 RAW = PROJECT / "raw.mp4"
 TRANSCRIPT = PROJECT / "edit" / "transcripts" / "raw.json"
